@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EF39DACD25405B4500D218FF /* AgendaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF39DACB25405B4500D218FF /* AgendaDataModel.xcdatamodeld */; };
-		EF39DAF12540678A00D218FF /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39DAEF2540678A00D218FF /* Person+CoreDataClass.swift */; };
-		EF39DAF22540678A00D218FF /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39DAF02540678A00D218FF /* Person+CoreDataProperties.swift */; };
+		EF54A4542541AECE009A0B86 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54A4522541AECE009A0B86 /* Person+CoreDataClass.swift */; };
+		EF54A4552541AECE009A0B86 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54A4532541AECE009A0B86 /* Person+CoreDataProperties.swift */; };
 		EFAC7926253F1A490024B71E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7925253F1A490024B71E /* AppDelegate.swift */; };
 		EFAC7928253F1A490024B71E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7927253F1A490024B71E /* SceneDelegate.swift */; };
 		EFAC792A253F1A490024B71E /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7929253F1A490024B71E /* Initial.swift */; };
@@ -41,8 +41,8 @@
 
 /* Begin PBXFileReference section */
 		EF39DACC25405B4500D218FF /* AgentaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AgentaDataModel.xcdatamodel; sourceTree = "<group>"; };
-		EF39DAEF2540678A00D218FF /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EF39DAF02540678A00D218FF /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF54A4522541AECE009A0B86 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF54A4532541AECE009A0B86 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFAC7922253F1A490024B71E /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC7925253F1A490024B71E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC7927253F1A490024B71E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 		EF39DAD125405C0A00D218FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF39DAEF2540678A00D218FF /* Person+CoreDataClass.swift */,
-				EF39DAF02540678A00D218FF /* Person+CoreDataProperties.swift */,
+				EF54A4522541AECE009A0B86 /* Person+CoreDataClass.swift */,
+				EF54A4532541AECE009A0B86 /* Person+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,10 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF39DAF22540678A00D218FF /* Person+CoreDataProperties.swift in Sources */,
+				EF54A4552541AECE009A0B86 /* Person+CoreDataProperties.swift in Sources */,
 				EFAC797C253F27810024B71E /* DetailsModal.swift in Sources */,
 				EFAC792A253F1A490024B71E /* Initial.swift in Sources */,
-				EF39DAF12540678A00D218FF /* Person+CoreDataClass.swift in Sources */,
+				EF54A4542541AECE009A0B86 /* Person+CoreDataClass.swift in Sources */,
 				EFAC7926253F1A490024B71E /* AppDelegate.swift in Sources */,
 				EF39DACD25405B4500D218FF /* AgendaDataModel.xcdatamodeld in Sources */,
 				EFAC7928253F1A490024B71E /* SceneDelegate.swift in Sources */,
