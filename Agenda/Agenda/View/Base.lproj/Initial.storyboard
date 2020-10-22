@@ -44,6 +44,7 @@
         <!--Navigation Controller-->
         <scene sceneID="SvW-b8-KXa">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkP-sU-DM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="vCV-vF-3De" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="moi-PN-JcL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -53,7 +54,6 @@
                         <segue destination="Vf0-85-GvT" kind="relationship" relationship="rootViewController" id="X3K-h3-mAr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jkP-sU-DM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-865" y="-579"/>
         </scene>
