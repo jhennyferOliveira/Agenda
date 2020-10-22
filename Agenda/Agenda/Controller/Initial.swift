@@ -36,9 +36,9 @@ class Initial: UITableViewController {
     }
         
     @IBAction func addTapped(_sender: UIBarButtonItem) {
-        DetailsModal().action = .add
         let storyboard = UIStoryboard.init(name: "DetailsModal", bundle: nil)
         let secondVc = storyboard.instantiateViewController(withIdentifier: "DetailsModal") as! DetailsModal
+        secondVc.action = .add
         present(secondVc, animated: true, completion: nil)
     }
     
@@ -46,9 +46,10 @@ class Initial: UITableViewController {
         fetchData()
     }
     
-    func fetchData(){
+    func fetchData() {
         do {
-            self.agenda = try context.fetch(Person.fetchRequest())
+            let request = Person.fetchRequest() as NSFetchRequest<Person>
+            self.agenda = try context.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -73,11 +74,12 @@ class Initial: UITableViewController {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DetailsModal().action = .edit
-        DetailsModal().person = agenda![indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {      
+        guard let agenda = agenda else{return}
         let storyboard = UIStoryboard.init(name: "DetailsModal", bundle: nil)
         let secondVc = storyboard.instantiateViewController(withIdentifier: "DetailsModal") as! DetailsModal
+        secondVc.action = .edit
+        secondVc.person = agenda[indexPath.row]
         present(secondVc, animated: true, completion: nil)
     }
     
@@ -98,7 +100,6 @@ class Initial: UITableViewController {
         }
         return UISwipeActionsConfiguration(actions: [action])
     }
-
 }
 
 extension Notification.Name {
