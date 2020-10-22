@@ -2,7 +2,7 @@
 //  Person+CoreDataClass.swift
 //  Agenda
 //
-//  Created by Jhennyfer Rodrigues de Oliveira on 21/10/20.
+//  Created by Jhennyfer Rodrigues de Oliveira on 22/10/20.
 //
 //
 
