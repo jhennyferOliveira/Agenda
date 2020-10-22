@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsModal: UIViewController {
     var person:Person?
@@ -28,31 +29,38 @@ class DetailsModal: UIViewController {
     }
     
     @IBAction func saveTapped(){
+        if action == .edit{
+            edit()
+        } else {
+            add()
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func edit(){
+        person?.name = textFieldName.text
+        person?.email = textFieldEmail.text
+        person?.number = Int64(textFieldCellNumber.text!) ?? 0
+        do {
+            try self.context.save()
+        } catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func add(){
         agenda = try! context.fetch(Person.fetchRequest())
         let newPerson = Person(context: context.self)
         newPerson.name = textFieldName.text
         newPerson.email = textFieldEmail.text
         newPerson.number = Int64(textFieldCellNumber.text!) ?? 0
+        newPerson.id = UUID()
         do {
             try self.context.save()
         } catch{
             print(error.localizedDescription)
         }
         
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func edit(){
-        guard let person = person else{return}
-        person.name = textFieldName.text
-        person.email = textFieldEmail.text
-        person.number = Int64(textFieldCellNumber.text!) ?? 0
-        do {
-            try self.context.save()
-        } catch{
-            print(error.localizedDescription)
-        }
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
