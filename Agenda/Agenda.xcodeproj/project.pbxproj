@@ -10,6 +10,7 @@
 		EF39DACD25405B4500D218FF /* AgendaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF39DACB25405B4500D218FF /* AgendaDataModel.xcdatamodeld */; };
 		EF54A4542541AECE009A0B86 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54A4522541AECE009A0B86 /* Person+CoreDataClass.swift */; };
 		EF54A4552541AECE009A0B86 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54A4532541AECE009A0B86 /* Person+CoreDataProperties.swift */; };
+		EF54A4622541C80E009A0B86 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF54A4612541C80E009A0B86 /* CloudKit.framework */; };
 		EFAC7926253F1A490024B71E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7925253F1A490024B71E /* AppDelegate.swift */; };
 		EFAC7928253F1A490024B71E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7927253F1A490024B71E /* SceneDelegate.swift */; };
 		EFAC792A253F1A490024B71E /* Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC7929253F1A490024B71E /* Initial.swift */; };
@@ -43,6 +44,8 @@
 		EF39DACC25405B4500D218FF /* AgentaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AgentaDataModel.xcdatamodel; sourceTree = "<group>"; };
 		EF54A4522541AECE009A0B86 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EF54A4532541AECE009A0B86 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF54A45C2541C7FF009A0B86 /* Agenda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Agenda.entitlements; sourceTree = "<group>"; };
+		EF54A4612541C80E009A0B86 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EFAC7922253F1A490024B71E /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC7925253F1A490024B71E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC7927253F1A490024B71E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF54A4622541C80E009A0B86 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +99,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EF54A4602541C80E009A0B86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF54A4612541C80E009A0B86 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EFAC7919253F1A490024B71E = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +114,7 @@
 				EFAC793E253F1A4A0024B71E /* AgendaTests */,
 				EFAC7949253F1A4A0024B71E /* AgendaUITests */,
 				EFAC7923253F1A490024B71E /* Products */,
+				EF54A4602541C80E009A0B86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +131,7 @@
 		EFAC7924253F1A490024B71E /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				EF54A45C2541C7FF009A0B86 /* Agenda.entitlements */,
 				EFAC7936253F1A4A0024B71E /* Info.plist */,
 				EF39DAD125405C0A00D218FF /* Model */,
 				EFAC795E253F1AD00024B71E /* Config */,
@@ -488,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Agenda/Agenda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UZ6YPHV3D;
 				INFOPLIST_FILE = Agenda/Info.plist;
@@ -507,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Agenda/Agenda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UZ6YPHV3D;
 				INFOPLIST_FILE = Agenda/Info.plist;
