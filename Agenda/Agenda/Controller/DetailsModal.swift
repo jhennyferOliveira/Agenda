@@ -13,6 +13,7 @@ class DetailsModal: UIViewController {
     var action: Action = .edit
     var agenda: [Person]?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -20,7 +21,29 @@ class DetailsModal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configGestureRecognizer()
+        configView()
+        configSaveButton()
+    }
+    
+    func configSaveButton() {
         saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
+    }
+    
+    func configGestureRecognizer() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:  #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func configView() {
+        guard let person = person else {return}
+        textFieldName.text = person.name
+        textFieldEmail.text = person.email
+        textFieldCellNumber.text = String(person.number)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,19 +60,19 @@ class DetailsModal: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func edit(){
-        person?.name = textFieldName.text
-        person?.email = textFieldEmail.text
-        person?.number = Int64(textFieldCellNumber.text!) ?? 0
+    func edit() {
+        guard let person = person else { return }
+        person.name = textFieldName.text
+        person.email = textFieldEmail.text
+        person.number = Int64(textFieldCellNumber.text!) ?? 0
         do {
             try self.context.save()
-        } catch{
+        } catch {
             print(error.localizedDescription)
         }
     }
     
-    func add(){
-        agenda = try! context.fetch(Person.fetchRequest())
+    func add() {
         let newPerson = Person(context: context.self)
         newPerson.name = textFieldName.text
         newPerson.email = textFieldEmail.text
@@ -57,10 +80,8 @@ class DetailsModal: UIViewController {
         newPerson.id = UUID()
         do {
             try self.context.save()
-        } catch{
+        } catch {
             print(error.localizedDescription)
         }
-        
     }
-    
 }
