@@ -7,14 +7,18 @@
 
 import UIKit
 import CoreData
+
+//MARK:- Which action to perform when going to the next Controller
 enum Action{
     case edit
     case add
 }
+
 class Initial: UITableViewController {
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     var agenda: [Person]?
+    //MARK:- Reference to context in app delegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func loadView() {
@@ -76,26 +80,26 @@ class Initial: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {      
         guard let agenda = agenda else{return}
+        let selectedPerson = agenda[indexPath.row]
         let storyboard = UIStoryboard.init(name: "DetailsModal", bundle: nil)
         let secondVc = storyboard.instantiateViewController(withIdentifier: "DetailsModal") as! DetailsModal
         secondVc.action = .edit
-        secondVc.person = agenda[indexPath.row]
+        secondVc.person = selectedPerson
         present(secondVc, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-            // get the person to remove
-            let personToRemove = self.agenda![indexPath.row]
-            // remove the person
+            
+            guard let agenda = self.agenda else {return}
+            let personToRemove = agenda[indexPath.row]
             self.context.delete(personToRemove)
-            // save the data
             do {
                 try  self.context.save()
             } catch {
                 print(error.localizedDescription)
             }
-            // re-fetch
             self.fetchData()
         }
         return UISwipeActionsConfiguration(actions: [action])
