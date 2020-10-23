@@ -81,6 +81,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Salvar"/>
+                                <connections>
+                                    <action selector="saveTapped" destination="CJu-sr-fwI" eventType="touchUpInside" id="byq-9s-Djz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yvM-gN-D7g"/>
